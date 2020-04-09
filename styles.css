@@ -1,0 +1,472 @@
+﻿@charset "utf-8";
+/**
+    Color Values
+    Link:        #cd3327
+    Link Hover: #72201C
+ */
+footer {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+    footer p {
+        font-size: 0.75em;
+        color: #dbdbdb;
+        text-align: right;
+    }
+footer p > a {
+    color: #cd3327;
+    text-decoration: none;
+}
+
+.top-container {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    text-align: left;
+    background-color: white;
+}
+
+.productHeader {
+    color: #f1f1f1;
+}
+
+.content {
+    background-color: white;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+    .sticky + .content {
+        padding-top: 102px;
+    }
+
+
+
+#title {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    font-size: 55px;
+    background-color: white;
+}
+
+
+#titleImage {
+    position: fixed;
+    height: 100px;
+    position: relative;
+    left: 20px;
+    top: -5px;
+}
+
+
+#ProductTitle {
+    position: fixed;
+    top: 150px;
+    width: 100%;
+    height: 60px;
+    background: #003865;
+    font-size: x-large;
+    color: #FFFFFF;
+}
+
+
+.progressBarContainer {
+    position: fixed;
+    top: 90px;
+    height: 60px;
+    width: 100%;
+    background-color: #003865 ;
+
+}
+
+    .progressBar {
+      counter-reset: step;
+  }
+
+.progressBar {
+    position: relative;
+    left: 0vw;
+    display: block;
+    width: 100vw;
+    height: 4px;
+} /*Progress bar positioning and stuff...*/
+
+    .progressBar li.active {
+      color: #000000;
+      cursor: default;
+  } /*Changes the font color for the current active*/
+    .progressBar li {
+      list-style-type: none;
+      width: 30vw;
+      float: left;
+      font-size: 15px;
+      font-weight: bold;
+      position: relative;
+      left: 5vw;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      cursor: default;
+
+  } /*General settings for the off stages*/
+
+    .progressBar li.active:before {
+      width: 25px;
+      height: 25px;
+      content: counter(step);
+      counter-increment: step;
+      line-height: 25px;
+      border: 2px solid #771923;
+      display: block;
+      text-align: center;
+      margin: 9px auto 5px auto;
+      border-radius: 50%;
+      background-color: #771923;
+
+  } /*Creates the surrounding circles for the active*/
+    .progressBar li:before {
+      width: 25px;
+      height: 25px;
+      content: counter(step);
+      counter-increment: step;
+      line-height: 25px;
+      border: 2px solid #771923;
+      display: block;
+      text-align: center;
+      margin: 9px auto 5px auto;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      color: #000000;
+
+  } /*Creates the surrounding circles for the off stages*/
+
+    .progressBar li:after {
+      width: 100%;
+      height: 5px;
+      content: '';
+      position: absolute;
+      background-color:#FFFFFF;
+      top: 20px;
+      left: 15vw;
+      z-index: -1;
+
+  } /*Creates loading bar*/
+    .progressBar li.active:after {
+      width: 100%;
+      height: 5px;
+      content: '';
+      position: absolute;
+      background-color: #771923;
+      top: 20px;
+      left: 15vw;
+      z-index: -1;
+  } /*Edits loading bar for the active*/
+    .progressBar li.lastStage:after {
+       width: 0vw;
+      height: 5px;
+      content: '';
+      position: absolute;
+      background-color: #FFFFFF;
+      top: 20px;
+      left: -45vw;
+      z-index: -2;
+  } /*Edits loading bar for the last stage*/
+
+
+#loadingIndicator {
+    position: relative;
+
+}
+
+#ProductName {
+    float: left;
+    padding-top: 0.75em;
+    padding-left: 2.5em;
+}
+
+.material-btn {
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    margin: 7px;
+    outline: solid 1px #771923;
+}
+
+.material-btn:hover {
+    outline-width: 3px;
+    height: 70px;
+    width: 70px;
+    padding: unset;
+    margin: 7px;
+}
+
+#TotalPrice {
+    float: right;
+    padding-top: 0.75em;
+    padding-right: 3em;
+}
+
+#main {
+    width: 100%;
+    height: 0px;
+    /*margin: 0px 10vw 0px 10vw;*/
+}
+
+.options-line {
+    color: #0099B5;
+    background-color: #0099B5;
+}
+
+#myConfiguratorSOSS {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+#myConfiguratorSOSS.sticky {
+    position: fixed;
+    top: 80px;
+}
+
+.selected {
+    color: #771923;
+    padding-left: 0.5em;
+}
+
+.non-selected {
+    color: #771923;
+    padding-left: 0.5em;
+}
+
+#myDiv {
+    display: none;
+}
+
+#loadingScreen {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    color: black;
+}
+
+    #loadingScreen .content {
+        margin-top: 2vh;
+    }
+
+#loadingLabel {
+    position: relative;
+    top: 25%;
+    left: -8px;
+    text-align: center;
+    vertical-align: central;
+    font-size: 4em;
+}
+
+#myBar {
+    display: block;
+    position: relative;
+    width: 0%;
+    height: 4px;
+    background-color: cornflowerblue;
+}
+
+
+.loading-gif img{
+    display: block;
+    position: fixed;
+    top: 42vh;
+    left: 35vw;
+    width: 30vw;
+}
+
+/* MENU */
+
+
+.menu {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    margin: 10px 10px 10px 10px;
+    background-color: #771923;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: 0.3s border-radius ease-in-out, 0.3s height ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+
+}
+
+.menu--closed {
+    height: 40px;
+}
+
+.menu--open {
+    height: 100px;
+}
+
+.button {
+    transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 2.5em;
+    left: 0%;
+    top: 10px;
+    opacity: 1;
+
+    flex-direction: column;
+    height: 20%;
+    justify-content: space-between;
+
+}
+
+    .button:hover {
+        opacity: 0.6;
+    }
+
+    .button span {
+        width: 100%;
+        height: 4px;
+        background-color: black;
+        border-radius: 20%;
+    }
+
+
+.menu--open .button {
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+
+#circle-play {
+    margin-top: 1px;
+}
+
+.tools {
+    position: absolute;
+    top: 50%;
+  transform: translateY(-50%);
+    right: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #cd3327;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+}
+.tools:after {
+    content: 'PLAY';
+    position: absolute;
+    top: 40px;
+    color: #cd3327;
+}
+    .tools .icon {
+        transition: 0.2s transform ease-in-out;
+    }
+
+        .tools .icon:hover {
+            transform: scale(0.8);
+        }
+.tools:hover {
+    background-color: #72201C;
+}        
+.tools--hidden {
+    margin-top: 400px;
+    z-index: -100;
+}
+
+.tools--visible {
+    margin-top: 40%;
+    z-index: 100;
+}
+
+/*Summary table*/
+
+.summaryTable {
+    position: fixed;
+    top: 260px;
+    left: 75vw;
+   background-color: #efefef;
+    border-radius: 7px;
+    padding: 16px;
+    width: 16vw;
+    height: 40vh;
+}
+
+    .summaryTable.sticky {
+        position: fixed;
+        top: 120px;
+    }
+
+.summary:before {
+    content: attr(aria-label);
+    font-size: 100%;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.summary li {
+    margin: 8px 8px 8px 10px;
+    font-size: 1.2em;
+    width:100px;
+}
+
+.summaryContent{
+    line-height: 1.5;
+    position: relative;
+    left: 2em;
+    top: 0px;
+    margin: 10px 20px 0px 0px;
+}
+
+/*BACK ARROW*/
+.chevron::before {
+	border-style: solid;
+	border-width: 0.5em 0.5em 0 0;
+	content: '';
+	display: inline-block;
+	height: 1.5em;	
+	position: absolute;
+	top: 0.9em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 1.5em;
+    color: white;
+    border-radius: 10px 6px 6px 10px;
+
+}
+
+.chevron.left:before {
+	left: 2em;
+	transform: rotate(-135deg);
+}
+
+.btnFinalize {
+    position:fixed;
+    bottom: 50px;
+    right: 100px;
+    width: 200px;
+    height: 40px;
+
+
+}
