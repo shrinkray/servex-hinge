@@ -1,56 +1,77 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8" />
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="utf-8"
+    />
     <title>Configurator Tool</title>
-  
+
     <link href="styles.css" rel="stylesheet" />
-</head>
-<body>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
     <div id="content">
-        <section id="main">
-            <div id="myConfiguratorSOSS">
-                <div id="loadingScreen">
-                    <div id="myBar"></div>
-                    <div class="loading-gif"><img src="public/loading.gif" /></div>
-                    <!--<div id="loadingLabel"></div>-->
-                </div>
+      <section id="main">
+        <div id="myConfiguratorSOSS">
+          <div id="loadingScreen">
+            <div id="myBar"></div>
+            <div class="loading-gif"><img src="public/loading.gif" /></div>
+            <!--<div id="loadingLabel"></div>-->
+          </div>
 
-                <canvas id="myDiv"></canvas>
-                <div id="playButton" class="tools" onclick="menuPlay()">
-                    <div class="play" >
-                        <svg id="circle-play" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 512 512"><path fill="#FFF" d="M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z"/></svg>
-                    </div>
-                </div>
+          <canvas id="myDiv"></canvas>
+          <div id="playButton" class="tools" onclick="menuPlay()">
+            <div class="play">
+              <svg
+                id="circle-play"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                height="20px"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="#FFF"
+                  d="M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z"
+                />
+              </svg>
             </div>
-
-        </section>
-        <footer>
-            <p>Copyright &copy; <span id="year"></span> <a href="http://www.servex-us.com" target="_blank">Servex US</a></p>
-        </footer>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <!-- <p>Copyright &copy; <span id="year"></span> <a href="http://www.servex-us.com" target="_blank">Servex US</a></p> -->
+      </footer>
     </div>
 
     <script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script> -->
     <script src="https://preview.babylonjs.com/ammo.js"></script>
     <script src="https://preview.babylonjs.com/cannon.js"></script>
-    <script src="https://preview.babylonjs.com/Oimo.js"></script>
-    <script src="https://preview.babylonjs.com/gltf_validator.js"></script>
-    <script src="https://preview.babylonjs.com/earcut.min.js"></script>
+    <!-- <script src="https://preview.babylonjs.com/Oimo.js"></script> -->
+    <!-- <script src="https://preview.babylonjs.com/gltf_validator.js"></script> -->
+    <!-- <script src="https://preview.babylonjs.com/earcut.min.js"></script> -->
     <script src="https://preview.babylonjs.com/babylon.js"></script>
-    <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
-    <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
-    <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
-    <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+    <!-- <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script> -->
+    <!-- <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script> -->
+    <!-- <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script> -->
+    <!-- <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script> -->
     <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-    <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
-    <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <!-- <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script> -->
     <script src="js/servex.js"></script>
     <script>
-        // Show copyright year
-        document.getElementById("year").innerHTML = new Date().getFullYear();
+      // Show copyright year
+      // document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
-</body>
+  </body>
 </html>
