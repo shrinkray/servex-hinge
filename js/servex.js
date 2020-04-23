@@ -8,7 +8,7 @@ var loadingScreenDiv = window.document.getElementById('loadingScreen')
 var loadingScreenDiv = window.document.getElementById('loadingScreen')
 var menuDiv = document.getElementsByClassName('menu menu--closed')[0]
 var loadingScreenShowTimer = undefined
-var canvas = document.getElementById('myDiv')
+var canvas = document.getElementById('modelDisplay')
 var ccontainer = document.getElementById('myConfiguratorSOSS')
 var filesize = 5000000
 
@@ -19,7 +19,7 @@ var filesize = 5000000
 function MyLoadingScreen() {}
 
 MyLoadingScreen.prototype.displayLoadingUI = function() {
-  var bar = document.getElementById('myBar')
+  var bar = document.getElementById('loadingBar')
   //var elem = document.getElementById("loadingLabel");
   bar.style.width = 0 + '%'
   //elem.innerHTML = 0 + '%';
@@ -129,11 +129,17 @@ var createScene = function() {
       }, 12000)
 
       scene.activeCamera.alpha = Math.PI
-      scene.activeCamera.beta = (7.8 * Math.PI) / 16
+      //scene.activeCamera.beta = (7.8 * Math.PI) / 16
+      // This new beta value tips the model down slightly so we see the top of the hinge
+      // Great source of info: https://doc.babylonjs.com/api/classes/babylon.arcrotatecamera#beta
+
+      scene.activeCamera.beta = 1.3
 
       photoCamera = scene.activeCamera.clone()
       photoCameraB = photoCamera.clone()
       photoCameraB.alpha = Math.PI / 3 + Math.PI
+
+      console.log(`Beta: ${scene.activeCamera.beta}`)
 
       // Ground
       var sourcePlane = new BABYLON.Plane(0, 1, 0, 0)
@@ -201,7 +207,7 @@ var createScene = function() {
         loadedPercent = Math.floor(evt.loaded / evt.total) * 100
         if (evt.loaded == evt.total) loadedPercent = 100
       } else {
-        var bar = document.getElementById('myBar')
+        var bar = document.getElementById('loadingBar')
         //var elem = document.getElementById("loadingLabel");
         loadedPercent = Math.round((evt.loaded / filesize) * 100)
         if (loadedPercent > 100) {
