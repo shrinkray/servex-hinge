@@ -6,34 +6,25 @@
       content="width=device-width, initial-scale=1"
       charset="utf-8"
     />
-    <title>Configurator Tool</title>
+    <title>Models</title>
 
     <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script> -->
-    <div id="content">
-      <section id="main">
-        <div id="myConfiguratorSOSS">
-          <div id="loadingScreen">
-            <div id="loadingBar"></div>
+    <div id="content" class="content">
+      <section id="main" class="main">
+        <div id="sossModels" class="sossModels">
+          <div id="loadingScreen" class="loadingScreen">
+            <div id="loadingBar" class="loadingBar"></div>
             <div class="loading-gif"><img src="public/loading.gif" /></div>
-            <!--<div id="loadingLabel"></div>-->
           </div>
 
-          <canvas id="modelDisplay"></canvas>
+          <canvas id="modelDisplay" class="modelDisplay"></canvas>
           <div id="playButton" class="tools" onclick="menuPlay()">
             <div class="play">
               <svg
                 id="circle-play"
+                class="circle-play"
                 xmlns="http://www.w3.org/2000/svg"
                 width="20px"
                 height="20px"
@@ -49,7 +40,11 @@
         </div>
       </section>
       <footer>
-        <!-- <p>Copyright &copy; <span id="year"></span> <a href="http://www.servex-us.com" target="_blank">Servex US</a></p> -->
+        <p class="copyright">
+          Copyright &copy;
+          <span id="year"></span>
+          <a href="http://www.soss.com" target="_self">SOSS Inc.</a>
+        </p>
       </footer>
     </div>
 
@@ -57,21 +52,13 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script> -->
     <script src="https://preview.babylonjs.com/ammo.js"></script>
     <script src="https://preview.babylonjs.com/cannon.js"></script>
-    <!-- <script src="https://preview.babylonjs.com/Oimo.js"></script> -->
-    <!-- <script src="https://preview.babylonjs.com/gltf_validator.js"></script> -->
-    <!-- <script src="https://preview.babylonjs.com/earcut.min.js"></script> -->
     <script src="https://preview.babylonjs.com/babylon.js"></script>
-    <!-- <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script> -->
-    <!-- <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script> -->
-    <!-- <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script> -->
-    <!-- <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script> -->
     <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-    <!-- <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
-    <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script> -->
+
     <script src="build.js"></script>
     <script>
       // Show copyright year
-      // document.getElementById("year").innerHTML = new Date().getFullYear();
+      document.getElementById('year').innerHTML = new Date().getFullYear()
     </script>
   </body>
 </html>
