@@ -9,23 +9,23 @@ var loadingScreenDiv = window.document.getElementById('loadingScreen')
 var menuDiv = document.getElementsByClassName('menu menu--closed')[0]
 var loadingScreenShowTimer = undefined
 var canvas = document.getElementById('modelDisplay')
-var ccontainer = document.getElementById('myConfiguratorSOSS')
+var ccontainer = document.getElementById('sossModels')
 var filesize = 5000000
 
 //****************************************************************************************
 //*************************** LOADING SCREEN SETTINGS ***********************************
 //****************************************************************************************
 
-function MyLoadingScreen() {}
+function sossLoadingScreen() {}
 
-MyLoadingScreen.prototype.displayLoadingUI = function() {
+sossLoadingScreen.prototype.displayLoadingUI = function() {
   var bar = document.getElementById('loadingBar')
   //var elem = document.getElementById("loadingLabel");
   bar.style.width = 0 + '%'
   //elem.innerHTML = 0 + '%';
 }
 
-MyLoadingScreen.prototype.hideLoadingUI = function() {
+sossLoadingScreen.prototype.hideLoadingUI = function() {
   loadingScreenDiv.style.opacity = 1
   var loadingScreenHideTimer = window.setInterval(hideLoadingScreen, 50)
   function hideLoadingScreen() {
@@ -100,7 +100,7 @@ var material = url.searchParams.get('material')
 
 var createScene = function() {
   //Loading Screen
-  var loadingScreen = new MyLoadingScreen()
+  var loadingScreen = new sossLoadingScreen()
   engine.loadingScreen = loadingScreen
   engine.displayLoadingUI()
 
