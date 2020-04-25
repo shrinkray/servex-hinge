@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta
@@ -7,8 +7,7 @@
       charset="utf-8"
     />
     <title>Models</title>
-
-    <link href="styles.css" rel="stylesheet" />
+    <link href="styles.min.css" rel="stylesheet" />
   </head>
   <body>
     <div id="content" class="content">
@@ -16,18 +15,18 @@
         <div id="sossModels" class="sossModels">
           <div id="loadingScreen" class="loadingScreen">
             <div id="loadingBar" class="loadingBar"></div>
-            <div class="loading-gif"><img src="public/loading.gif" /></div>
+            <div class="loading-gif">
+              <img src="public/loading.gif" />
+            </div>
           </div>
-
           <canvas id="modelDisplay" class="modelDisplay"></canvas>
           <div id="playButton" class="tools" onclick="menuPlay()">
             <div class="play">
               <svg
-                id="circle-play"
                 class="circle-play"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20px"
-                height="20px"
+                xmlns="https://www.w3.org/2000/svg"
+                width="20"
+                height="20"
                 viewBox="0 0 512 512"
               >
                 <path
@@ -43,21 +42,17 @@
         <p class="copyright">
           Copyright &copy;
           <span id="year"></span>
-          <a href="http://www.soss.com" target="_self">SOSS Inc.</a>
+          <a href="https://www.soss.com" target="_self">SOSS Inc.</a>
         </p>
       </footer>
     </div>
-
     <script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script> -->
     <script src="https://preview.babylonjs.com/ammo.js"></script>
     <script src="https://preview.babylonjs.com/cannon.js"></script>
     <script src="https://preview.babylonjs.com/babylon.js"></script>
     <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-
     <script src="build.js"></script>
     <script>
-      // Show copyright year
       document.getElementById('year').innerHTML = new Date().getFullYear()
     </script>
   </body>

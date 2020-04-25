@@ -1,6 +1,5 @@
-﻿//*************************************
-//***** Screen elements **********
-//*************************************
+﻿//***** SCREEN ELEMENTS **********
+
 var opened = true
 
 var loadedPercent = 10
@@ -12,9 +11,7 @@ var canvas = document.getElementById('modelDisplay')
 var ccontainer = document.getElementById('sossModels')
 var filesize = 5000000
 
-//****************************************************************************************
-//*************************** LOADING SCREEN SETTINGS ***********************************
-//****************************************************************************************
+//***** LOADING SCREEN SETTINGS *******
 
 function sossLoadingScreen() {}
 
@@ -53,16 +50,14 @@ canvas.addEventListener(
   false,
 )
 
-////**************************************************************************
-//********************* BABYLON ENGINE INITIALIZATION *****************
-////**************************************************************************
+//******* BABYLON ENGINE INITIALIZATION ******
+
 var engine = new BABYLON.Engine(canvas, true, {
   premultipliedAlpha: false,
   preserveDrawingBuffer: true,
   stencil: true,
 })
 var scene = new BABYLON.Scene(engine)
-// Parameters: alpha, beta, radius, target position, scene
 var camera = new BABYLON.ArcRotateCamera(
   'Camera',
   0,
@@ -83,9 +78,7 @@ var currentMesh
 var shadowGenerator
 scene.clearColor = new BABYLON.Color3(1, 1, 1)
 
-//******************************************************
-//******************* MODEL REQUEST ********************
-//******************************************************
+//****** MODEL REQUEST *******
 
 var url = new URL(window.location.href)
 //console.log(url)
@@ -94,9 +87,7 @@ var code = url.searchParams.get('code')
 var material = url.searchParams.get('material')
 //console.log(material)
 
-//****************************************************************************************
-//****************************** CREATE & LOAD SCENE ***********************************
-//****************************************************************************************
+//******* CREATE & LOAD SCENE *******
 
 var createScene = function() {
   //Loading Screen
@@ -163,7 +154,8 @@ var createScene = function() {
           syncMesh[i].material.bumpTexture.level = 1.5
         }
 
-        //Textures
+        //***** TEXTURES *****
+
         if (i > 0) {
           //Base Color
           setBaseColor(syncMesh[i])
@@ -296,12 +288,3 @@ function menuPlay() {
   }
   opened = !opened
 }
-
-//***********************************************
-//********** DROPDOWN BUTTON *******************
-//***********************************************
-$(document).ready(function() {
-  var Menu = {
-    tools: $('.tools'),
-  }
-})
