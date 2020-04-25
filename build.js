@@ -5,7 +5,6 @@ var opened = true
 var loadedPercent = 10
 var loadingScreenDiv = window.document.getElementById('loadingScreen')
 var loadingScreenDiv = window.document.getElementById('loadingScreen')
-var menuDiv = document.getElementsByClassName('menu menu--closed')[0]
 var loadingScreenShowTimer = undefined
 var canvas = document.getElementById('modelDisplay')
 var ccontainer = document.getElementById('sossModels')
@@ -37,7 +36,6 @@ sossLoadingScreen.prototype.hideLoadingUI = function() {
       canvas.width = ccontainer.clientWidth
       canvas.height = ccontainer.clientHeight
       canvas.style.display = 'block'
-      // menuDiv.style.opacity = 1;
     }
   }
 }
@@ -58,6 +56,7 @@ var engine = new BABYLON.Engine(canvas, true, {
   stencil: true,
 })
 var scene = new BABYLON.Scene(engine)
+// Parameters: alpha, beta, radius, target position, scene
 var camera = new BABYLON.ArcRotateCamera(
   'Camera',
   0,
@@ -66,7 +65,7 @@ var camera = new BABYLON.ArcRotateCamera(
   new BABYLON.Vector3(0, 0, 0),
   scene,
 )
-console.log(scene)
+//console.log(scene)
 
 var photoCamera
 var photoCameraB
@@ -191,13 +190,15 @@ var createScene = function() {
       scene.environmentTexture = hdrTexture
       engine.hideLoadingUI()
       currentMesh = syncMesh
-      // console.log(syncMesh)
+      // console.log(syncMesh);
     },
     function(evt) {
       //On progress function
       if (evt.lengthComputable) {
         loadedPercent = Math.floor(evt.loaded / evt.total) * 100
-        if (evt.loaded == evt.total) loadedPercent = 100
+        if (evt.loaded == evt.total) {
+          loadedPercent = 100
+        }
       } else {
         var bar = document.getElementById('loadingBar')
         //var elem = document.getElementById("loadingLabel");
@@ -210,7 +211,9 @@ var createScene = function() {
 
         dlCount = evt.loaded / (1024 * 1024)
         loadedPercent = Math.round((evt.loaded / filesize) * 100)
-        if (evt.loaded == filesize) loadedPercent = 100
+        if (evt.loaded == filesize) {
+          loadedPercent = 100
+        }
       }
     },
   )
@@ -285,6 +288,6 @@ function menuPlay() {
         scene,
       )
     }
+    opened = !opened
   }
-  opened = !opened
 }
